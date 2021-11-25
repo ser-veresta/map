@@ -56,12 +56,12 @@ const Content = ({ home, setHome }) => {
     try {
       let res;
       if (!localStorage.getItem("id")) {
-        res = await axios.get(`http://localhost:5000/${"new"}`);
+        res = await axios.get(`https://map-99.herokuapp.com/${"new"}`);
         const { id } = res.data;
 
         localStorage.setItem("id", id);
       } else {
-        res = await axios.get(`http://localhost:5000/${localStorage.getItem("id")}`);
+        res = await axios.get(`https://map-99.herokuapp.com/${localStorage.getItem("id")}`);
       }
 
       res.data.success &&
